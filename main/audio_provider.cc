@@ -101,10 +101,10 @@ i2s_pin_config_t pin_config = {
   i2s_config.bits_per_sample = (i2s_bits_per_sample_t) 32;
 #else
   i2s_pin_config_t pin_config = {
-      .bck_io_num = 26,    // IIS_SCLK
-      .ws_io_num = 32,     // IIS_LCLK
+      .bck_io_num = 4,    // IIS_SCLK
+      .ws_io_num = 3,     // IIS_LCLK
       .data_out_num = -1,  // IIS_DSIN
-      .data_in_num = 33,   // IIS_DOUT
+      .data_in_num = 2,   // IIS_DOUT
   };
 #endif
 
