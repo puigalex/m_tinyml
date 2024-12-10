@@ -58,3 +58,15 @@ i2s_pin_config_t pin_config = {
 El siguiente diagrama muestra la conexión del micrófono INMP441 al ESP32:
 ![Diagrama de conexiones](imgs/diagrama_conexion.png)
 
+## Entrenamiento del modelo
+Para entrenar el modelo se debe realizar los siguientes pasos:
+1. Recopilar un dataset de audio.
+2. Estructurar el dataset en el siguiente formato:
+    - **audios**: Carpeta que contiene carpetas de cada clase a entrenar
+    - **audios.wav**: Archivo de audio que contiene los audios de cada clase.
+3. Ejecutar el entrenamiento de TinyConv con el notebook **entrenamiento.ipynb**.
+4. Guardar el modelo a un archivo protobuf.
+5. Convertir el modelo a un archivo tflite.
+6. Convertir el modelo a un archivo .cc el cual contiene toda la información necesaria para realizar la inferencia. Este archivo se integrará al proceso de compilación para que el ESP32 lo pueda acceder ya que no contamos con un file system como en un sistema operativo.
+
+
